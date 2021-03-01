@@ -25,7 +25,7 @@ namespace Assets.Scripts
         {
             List<ARRaycastHit> hits = new List<ARRaycastHit>();
             _rayManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), 
-                hits, TrackableType.Planes);
+                hits, TrackableType.FeaturePoint);
 
             if (hits.Count > 0)
             {
