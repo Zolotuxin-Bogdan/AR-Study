@@ -9,7 +9,7 @@ public class RotationManager : MonoBehaviour
     private bool _isLeftRotation;
     private bool _isRightRotation;
 
-    private float _speedRotation = 1f;
+    private float _speedRotation = 15f;
     void FixedUpdate()
     {
         if (_isLeftRotation)
@@ -28,7 +28,7 @@ public class RotationManager : MonoBehaviour
             _objectToRotate = GameObject.Find("Earth_Object");
         }
 
-        _objectToRotate.transform.Rotate(new Vector3(0, - _speedRotation));
+        _objectToRotate.transform.Rotate(new Vector3(0, - _speedRotation * Time.deltaTime));
     }
 
     private void LeftRotation()
@@ -38,7 +38,7 @@ public class RotationManager : MonoBehaviour
             _objectToRotate = GameObject.Find("Earth_Object");
         }
 
-        _objectToRotate.transform.Rotate(new Vector3(0, + _speedRotation));
+        _objectToRotate.transform.Rotate(new Vector3(0, + _speedRotation * Time.deltaTime));
     }
 
     public void RotateToLeft()
